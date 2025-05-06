@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../../css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+    
+        <div class="next">
+            <a href="../Challenge_3/5278ec.html" class="navLink"><i class="fa fa-arrow-right"></i></a>
+        </div>
+
+        <div class="container">
+            <h1><u>Challenge 2:</u> Sentiment Analysis from Social Media</h1>
+            <h3>What’s Happening: </h3>
+            <p>As the flooding spreads, thousands of residents across the city are posting live updates on social media. City officials are struggling to make sense of this flood of information. Your team has been asked to build an intelligent service that can analyze these posts and detect messages showing distress, panic, or calmness. This will help decision-makers allocate emergency resources more effectively.</p>
+            <h3>Your Mission: </h3>
+            <p>Build an Azure Function in C# that reads social media messages from a CSV file (social_media_tweets.csv) and sends them to Azure Cognitive Services for sentiment analysis. Then, save the results — including sentiment scores — to Azure Blob Storage, continuing the same storage logic used in Challenge 1.</p>
+            <h3>File Needed:</h3>
+            <p><a href="social_media_tweets.zip" download="social_media_tweets.csv">social_media_tweets.csv</a> (CSV format with fields: tweetId, timestamp, location, text)</p>
+            <h2>Success Criteria</h2>
+            <p><em>Given the complexity and variety of potential solutions, the goals for all challenge are verified by your team’s coach.</em></p>
+            <ul>
+            <li><p>The Azure Function reads and parses the CSV data. </p></li>
+            <li><p>Each tweet is analyzed using Azure’s Text Analytics API. </p></li>
+            <li><p>The enriched results (original tweet + sentiment) are saved to Azure Blob Storage.</p></li>
+            <li><p>The output files are consistent in format with those from Challenge 1.</p></li>
+            </ul>
+            <h2>References</h2>
+            <ul>
+            <li><p><a href="https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/quickstart?pivots=programming-language-csharp" target="_blank">Get started with Sentiment Analysis</a></p></li>
+            <li><p><a href="https://learn.microsoft.com/en-us/azure/ai-services/authentication" target="_blank">AI Services Authentication</a></p></li>
+            </ul>
+
+            <br />
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+          const pageKeys = {
+          "../Challenge_3/5278ec.html": "5278ec"
+          };
+
+          function hash(str) {
+              let h = 0;
+              for (let i = 0; i < str.length; i++) {
+                  h = Math.imul(31, h) + str.charCodeAt(i) | 0;
+              }
+              return Math.abs(h).toString(16).slice(0, 6);
+          }
+
+          document.querySelectorAll("a.navLink").forEach(link => {
+              const target = link.getAttribute("href");
+              if (pageKeys[target]) {
+                  link.addEventListener("click", function (e) {
+                      e.preventDefault();
+                      const input = prompt("Enter the access key to continue:");
+                      if (hash(input) === pageKeys[target]) {
+                          window.location.href = target;
+                      } else {
+                          alert("Invalid key. Access denied.");
+                      }
+                  });
+              }
+          });
+      </script>
+    </body>
+</html>
